@@ -1,0 +1,13 @@
+{
+
+    "require": {
+        "php-curl-class/php-curl-class": "^8.0",
+        "jaeger/phpquery-single": "^0.9.8"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
