@@ -1,6 +1,7 @@
 <?php
-define('SITE_URL','https://www.asas.com/');
-define('SITE_HOST','www.asas.com');
+define('SITE_URL','https://www.asdsad.com/');
+define('SITE_HOST','www.asdsad.com');
+define('IMAGE_PATH','asdsad');
 
 require_once __DIR__ . '/vendor/autoload.php';
 use Curl\Curl;
@@ -32,9 +33,13 @@ class SaveImg
      * @param $url
      * @return bool
      */
-    public function checkUrl($url)
+    public function checkUrl(&$url)
     {
-        $host = parse_url($url)['host']??'';
+        $host = parse_url($url)['host']??null;
+        if(is_null($host)){
+            $host = SITE_HOST.$host;
+            return true;
+        }
         return $host==SITE_HOST?true:false;
     }
 
@@ -79,9 +84,10 @@ class SaveImg
      */
     public function getImgByContent($doc)
     {
-        $imgEle = $doc->find('img');
+        $imgEle = $doc->find('a');
         for ($i=0;$i<count($imgEle);$i++){
-            $this->saveImgByLink($imgEle->eq($i)->attr('src'));
+            $src = $imgEle->eq($i)->attr('data-original');
+            !empty($src) && $this->saveImgByLink($src);
         }
     }
 
@@ -92,7 +98,7 @@ class SaveImg
     public function saveImgByLink($link)
     {
         $fileName = md5($link).'.jpg';
-        $path = __DIR__.'/535zh/';
+        $path = __DIR__.'/'.IMAGE_PATH.'/';
         $file = $path.$fileName;
         if(!is_file($file)){
             file_put_contents($file,file_get_contents($link));
