@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitebfe4b2f59690831afecbfcf7c97f5cc
 {
     public static $prefixLengthsPsr4 = array (
+        'M' => 
+        array (
+            'Medoo\\' => 6,
+        ),
         'C' => 
         array (
             'Curl\\' => 5,
@@ -14,6 +18,10 @@ class ComposerStaticInitebfe4b2f59690831afecbfcf7c97f5cc
     );
 
     public static $prefixDirsPsr4 = array (
+        'Medoo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/catfan/medoo/src',
+        ),
         'Curl\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl',
@@ -27,9 +35,18 @@ class ComposerStaticInitebfe4b2f59690831afecbfcf7c97f5cc
         'CallbackParameterToReference' => __DIR__ . '/..' . '/jaeger/phpquery-single/phpQuery.php',
         'CallbackReturnReference' => __DIR__ . '/..' . '/jaeger/phpquery-single/phpQuery.php',
         'CallbackReturnValue' => __DIR__ . '/..' . '/jaeger/phpquery-single/phpQuery.php',
+        'Curl\\ArrayUtil' => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl/ArrayUtil.php',
+        'Curl\\CaseInsensitiveArray' => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl/CaseInsensitiveArray.php',
+        'Curl\\Curl' => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl/Curl.php',
+        'Curl\\Decoder' => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl/Decoder.php',
+        'Curl\\MultiCurl' => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl/MultiCurl.php',
+        'Curl\\StrUtil' => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl/StrUtil.php',
+        'Curl\\Url' => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl/Url.php',
         'DOMDocumentWrapper' => __DIR__ . '/..' . '/jaeger/phpquery-single/phpQuery.php',
         'DOMEvent' => __DIR__ . '/..' . '/jaeger/phpquery-single/phpQuery.php',
         'ICallbackNamed' => __DIR__ . '/..' . '/jaeger/phpquery-single/phpQuery.php',
+        'Medoo\\Medoo' => __DIR__ . '/..' . '/catfan/medoo/src/Medoo.php',
+        'Medoo\\Raw' => __DIR__ . '/..' . '/catfan/medoo/src/Medoo.php',
         'phpQuery' => __DIR__ . '/..' . '/jaeger/phpquery-single/phpQuery.php',
         'phpQueryEvents' => __DIR__ . '/..' . '/jaeger/phpquery-single/phpQuery.php',
         'phpQueryObject' => __DIR__ . '/..' . '/jaeger/phpquery-single/phpQuery.php',

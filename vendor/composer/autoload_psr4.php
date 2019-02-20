@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
     'Curl\\' => array($vendorDir . '/php-curl-class/php-curl-class/src/Curl'),
 );

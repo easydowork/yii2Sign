@@ -2,7 +2,8 @@
 
     "require": {
         "php-curl-class/php-curl-class": "^8.0",
-        "jaeger/phpquery-single": "^0.9.8"
+        "jaeger/phpquery-single": "^0.9.8",
+        "catfan/medoo": "^1.6"
     },
     "repositories": {
         "packagist": {
