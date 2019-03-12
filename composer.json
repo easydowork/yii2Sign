@@ -1,6 +1,11 @@
 {
 
     "require": {
+        "ext-mcrypt": "*",
+        "ext-openssl": "*",
+        "ext-json": "*",
+        "ext-iconv": "*",
+        "ext-mbstring": "*",
         "php-curl-class/php-curl-class": "^8.0",
         "jaeger/phpquery-single": "^0.9.8",
         "catfan/medoo": "^1.6"
