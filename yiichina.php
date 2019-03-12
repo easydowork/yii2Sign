@@ -92,6 +92,6 @@ if($responseArray['status']?:0){
 
 echo $msg;
 
-file_put_contents(__DIR__.'login.log',$msg);
+file_put_contents(__DIR__.'login.log',$msg,FILE_APPEND);
 
 
