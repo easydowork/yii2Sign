@@ -4,7 +4,7 @@ use Curl\Curl;
 
 define('SiteUrl','https://www.yiichina.com/');   //站点URL
 define('LoginUrl',SiteUrl.'login');             //登录页面地址
-define('SignInUrl',SiteUrl.'registration');     //请求签到地址
+define('SignInUrl',SiteUrl.'ajax/registration');     //请求签到地址
 
 define('UserName','小叮当的肚兜');      //账号 自己配置
 define('PassWord','小叮当的肚兜');      //密码 自己配置
