@@ -82,7 +82,7 @@ $signInResponse  = $curl->response;
 
 //{"status":1,"message":"已连续1天"}
 
-$responseArray = json_decode($signInResponse,1);
+$responseArray = json_decode(json_encode($signInResponse),1);
 
 if($responseArray['status']?:0){
     $msg = date('Y-m-d').' sgin in OK'.PHP_EOL;
