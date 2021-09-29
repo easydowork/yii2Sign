@@ -1,19 +1,12 @@
 {
-
     "require": {
-        "ext-mcrypt": "*",
+        "php": ">=7.0",
         "ext-openssl": "*",
+        "ext-curl": "*",
         "ext-json": "*",
         "ext-iconv": "*",
         "ext-mbstring": "*",
         "php-curl-class/php-curl-class": "^8.0",
-        "jaeger/phpquery-single": "^0.9.8",
-        "catfan/medoo": "^1.6"
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        }
+        "jaeger/phpquery-single": "^0.9.8"
     }
 }

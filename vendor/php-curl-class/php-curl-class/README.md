@@ -1,9 +1,9 @@
 # PHP Curl Class: HTTP requests made easy
 
-[![](https://img.shields.io/github/release/php-curl-class/php-curl-class.svg)](https://github.com/php-curl-class/php-curl-class/releases/)
-[![](https://img.shields.io/github/license/php-curl-class/php-curl-class.svg)](https://github.com/php-curl-class/php-curl-class/blob/master/LICENSE)
-[![](https://img.shields.io/travis/php-curl-class/php-curl-class.svg)](https://travis-ci.org/php-curl-class/php-curl-class/)
-[![](https://img.shields.io/packagist/dt/php-curl-class/php-curl-class.svg)](https://github.com/php-curl-class/php-curl-class/releases/)
+[![](https://img.shields.io/github/release/php-curl-class/php-curl-class.svg?style=flat-square&sort=semver)](https://github.com/php-curl-class/php-curl-class/releases/)
+[![](https://img.shields.io/github/license/php-curl-class/php-curl-class.svg?style=flat-square)](https://github.com/php-curl-class/php-curl-class/blob/master/LICENSE)
+[![](https://img.shields.io/github/workflow/status/php-curl-class/php-curl-class/ci?style=flat-square)](https://github.com/php-curl-class/php-curl-class/actions/workflows/ci.yml)
+[![](https://img.shields.io/packagist/dt/php-curl-class/php-curl-class.svg?style=flat-square)](https://github.com/php-curl-class/php-curl-class/releases/)
 
 PHP Curl Class makes it easy to send HTTP requests and integrate with web APIs.
 
@@ -34,7 +34,7 @@ For latest commit version:
 
 ### Requirements
 
-PHP Curl Class works with PHP 5.3, 5.4, 5.5, 5.6, 7.0, 7.1, and HHVM.
+PHP Curl Class works with PHP 5.3, 5.4, 5.5, 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, and 8.0.
 
 ### Quick Start and Examples
 
@@ -43,7 +43,7 @@ More examples are available under [/examples](https://github.com/php-curl-class/
 ```php
 require __DIR__ . '/vendor/autoload.php';
 
-use \Curl\Curl;
+use Curl\Curl;
 
 $curl = new Curl();
 $curl->get('https://www.example.com/');
@@ -143,7 +143,7 @@ echo $curl->responseHeaders['CoNTeNT-TyPE'] . "\n"; // image/png
 ```
 
 ```php
-// Clean up.
+// Manual clean up.
 $curl->close();
 ```
 
@@ -156,7 +156,7 @@ curl_close($curl->curl);
 ```php
 require __DIR__ . '/vendor/autoload.php';
 
-use \Curl\MultiCurl;
+use Curl\MultiCurl;
 
 // Requests in parallel with callback functions.
 $multi_curl = new MultiCurl();
@@ -195,6 +195,7 @@ More examples are available under [/examples](https://github.com/php-curl-class/
 Curl::__construct($base_url = null)
 Curl::__destruct()
 Curl::__get($name)
+Curl::_fastDownload($url, $filename, $connections = 4) {
 Curl::attemptRetry()
 Curl::beforeSend($callback)
 Curl::buildPostData($data)
@@ -202,24 +203,59 @@ Curl::call()
 Curl::close()
 Curl::complete($callback)
 Curl::delete($url, $query_parameters = array(), $data = array())
+Curl::disableTimeout()
 Curl::download($url, $mixed_filename)
 Curl::error($callback)
 Curl::exec($ch = null)
 Curl::execDone()
 Curl::get($url, $data = array())
+Curl::getAttempts()
+Curl::getBeforeSendCallback()
+Curl::getCompleteCallback()
 Curl::getCookie($key)
+Curl::getCurl()
+Curl::getCurlErrorCode()
+Curl::getCurlErrorMessage()
+Curl::getDownloadCompleteCallback()
+Curl::getDownloadFileName()
+Curl::getErrorCallback()
+Curl::getErrorCode()
+Curl::getErrorMessage()
+Curl::getFileHandle()
+Curl::getHttpErrorMessage()
+Curl::getHttpStatusCode()
+Curl::getId()
 Curl::getInfo($opt = null)
+Curl::getJsonDecoder()
 Curl::getOpt($option)
+Curl::getRawResponse()
+Curl::getRawResponseHeaders()
+Curl::getRemainingRetries()
+Curl::getRequestHeaders()
+Curl::getResponse()
 Curl::getResponseCookie($key)
 Curl::getResponseCookies()
+Curl::getResponseHeaders()
+Curl::getRetries()
+Curl::getRetryDecider()
+Curl::getSuccessCallback()
+Curl::getUrl()
+Curl::getXmlDecoder()
 Curl::head($url, $data = array())
+Curl::isChildOfMultiCurl()
+Curl::isCurlError()
+Curl::isError()
+Curl::isHttpError()
 Curl::options($url, $data = array())
 Curl::patch($url, $data = array())
-Curl::post($url, $data = array(), $follow_303_with_post = false)
+Curl::post($url, $data = '', $follow_303_with_post = false)
 Curl::progress($callback)
 Curl::put($url, $data = array())
 Curl::removeHeader($key)
+Curl::reset()
 Curl::search($url, $data = array())
+Curl::setAutoReferer($auto_referer = true)
+Curl::setAutoReferrer($auto_referrer = true)
 Curl::setBasicAuthentication($username, $password = '')
 Curl::setConnectTimeout($seconds)
 Curl::setCookie($key, $value)
@@ -233,13 +269,23 @@ Curl::setDefaultTimeout()
 Curl::setDefaultUserAgent()
 Curl::setDefaultXmlDecoder()
 Curl::setDigestAuthentication($username, $password = '')
+Curl::setFile($file)
+Curl::setFollowLocation($follow_location = true)
+Curl::setForbidReuse($forbid_reuse = true)
 Curl::setHeader($key, $value)
 Curl::setHeaders($headers)
+Curl::setInterface($interface)
 Curl::setJsonDecoder($mixed)
 Curl::setMaxFilesize($bytes)
+Curl::setMaximumRedirects($maximum_redirects)
 Curl::setOpt($option, $value)
 Curl::setOpts($options)
 Curl::setPort($port)
+Curl::setProxy($proxy, $port = null, $username = null, $password = null)
+Curl::setProxyAuth($auth)
+Curl::setProxyTunnel($tunnel = true)
+Curl::setProxyType($type)
+Curl::setRange($range)
 Curl::setReferer($referer)
 Curl::setReferrer($referrer)
 Curl::setRetry($mixed)
@@ -249,7 +295,8 @@ Curl::setUserAgent($user_agent)
 Curl::setXmlDecoder($mixed)
 Curl::success($callback)
 Curl::unsetHeader($key)
-Curl::verbose($on = true, $output = STDERR)
+Curl::unsetProxy()
+Curl::verbose($on = true, $output = 'STDERR')
 MultiCurl::__construct($base_url = null)
 MultiCurl::__destruct()
 MultiCurl::addCurl(Curl $curl)
@@ -259,15 +306,18 @@ MultiCurl::addGet($url, $data = array())
 MultiCurl::addHead($url, $data = array())
 MultiCurl::addOptions($url, $data = array())
 MultiCurl::addPatch($url, $data = array())
-MultiCurl::addPost($url, $data = array(), $follow_303_with_post = false)
+MultiCurl::addPost($url, $data = '', $follow_303_with_post = false)
 MultiCurl::addPut($url, $data = array())
 MultiCurl::addSearch($url, $data = array())
 MultiCurl::beforeSend($callback)
 MultiCurl::close()
 MultiCurl::complete($callback)
+MultiCurl::disableTimeout()
 MultiCurl::error($callback)
 MultiCurl::getOpt($option)
 MultiCurl::removeHeader($key)
+MultiCurl::setAutoReferer($auto_referer = true)
+MultiCurl::setAutoReferrer($auto_referrer = true)
 MultiCurl::setBasicAuthentication($username, $password = '')
 MultiCurl::setConcurrency($concurrency)
 MultiCurl::setConnectTimeout($seconds)
@@ -277,22 +327,35 @@ MultiCurl::setCookieJar($cookie_jar)
 MultiCurl::setCookieString($string)
 MultiCurl::setCookies($cookies)
 MultiCurl::setDigestAuthentication($username, $password = '')
+MultiCurl::setFile($file)
+MultiCurl::setFollowLocation($follow_location = true)
+MultiCurl::setForbidReuse($forbid_reuse = true)
 MultiCurl::setHeader($key, $value)
 MultiCurl::setHeaders($headers)
+MultiCurl::setInterface($interface)
 MultiCurl::setJsonDecoder($mixed)
+MultiCurl::setMaximumRedirects($maximum_redirects)
 MultiCurl::setOpt($option, $value)
 MultiCurl::setOpts($options)
 MultiCurl::setPort($port)
+MultiCurl::setProxies($proxies)
+MultiCurl::setProxy($proxy, $port = null, $username = null, $password = null)
+MultiCurl::setProxyAuth($auth)
+MultiCurl::setProxyTunnel($tunnel = true)
+MultiCurl::setProxyType($type)
+MultiCurl::setRange($range)
+MultiCurl::setRateLimit($rate_limit)
 MultiCurl::setReferer($referer)
 MultiCurl::setReferrer($referrer)
 MultiCurl::setRetry($mixed)
 MultiCurl::setTimeout($seconds)
-MultiCurl::setUrl($url)
+MultiCurl::setUrl($url, $mixed_data = '')
 MultiCurl::setUserAgent($user_agent)
 MultiCurl::setXmlDecoder($mixed)
 MultiCurl::start()
 MultiCurl::success($callback)
 MultiCurl::unsetHeader($key)
+MultiCurl::unsetProxy()
 MultiCurl::verbose($on = true, $output = STDERR)
 ```
 
@@ -313,7 +376,21 @@ To run tests:
     $ composer update
     $ ./tests/run.sh
 
+To run select tests:
+
+    $ git clone https://github.com/php-curl-class/php-curl-class.git
+    $ cd php-curl-class/
+    $ composer update
+    $ ./tests/run.sh --filter=keyword
+
+To test all PHP versions in containers:
+
+    $ git clone https://github.com/php-curl-class/php-curl-class.git
+    $ cd php-curl-class/
+    $ ./tests/test_all.sh
+
 ### Contribute
+
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.
 1. Fork the repository on GitHub to start making your changes.
 1. Write one or more tests for the new feature or that expose the bug.
