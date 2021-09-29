@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/yiichina.php';
+require_once __DIR__ . '/YiiChina.php';
 
 define('SiteUrl','https://www.yiichina.com/');   //站点URL
 define('LoginUrl',SiteUrl.'login');             //登录页面地址
