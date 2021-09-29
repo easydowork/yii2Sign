@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => 'c76f6cb6148625ac3bc41a155f3315546660e4f3',
+        'name' => '__root__',
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => 'c76f6cb6148625ac3bc41a155f3315546660e4f3',
+            'dev_requirement' => false,
+        ),
+        'jaeger/phpquery-single' => array(
+            'pretty_version' => '0.9.9',
+            'version' => '0.9.9.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jaeger/phpquery-single',
+            'aliases' => array(),
+            'reference' => '6c12e3a1648dc619f16920f96082f397d74e0127',
+            'dev_requirement' => false,
+        ),
+        'php-curl-class/php-curl-class' => array(
+            'pretty_version' => '8.10.0',
+            'version' => '8.10.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-curl-class/php-curl-class',
+            'aliases' => array(),
+            'reference' => 'c97c96d5d422b4085aba32ace096c3e404dde607',
+            'dev_requirement' => false,
+        ),
+    ),
+);
