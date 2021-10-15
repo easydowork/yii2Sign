@@ -30,7 +30,7 @@ function sign()
     $yiichina = new yiichina();
     for($i=0;$i<3;$i++){
         if($yiichina->sign()){
-            $msg = date('Y-m-d').' sgin in OK';
+            $msg = date('Y-m-d H:i:s').' sgin in OK';
             @file_put_contents(LOGFILE,$msg.PHP_EOL,FILE_APPEND);
             break;
         }
